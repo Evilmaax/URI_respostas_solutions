@@ -9,3 +9,6 @@ ______________________________________________________________________________
 Here you will find all the anwers to the URI problems (https://www.urionlinejudge.com.br/judge/pt/categories).
 
 My alghoritms are made in Python 3.
+
+
+maximilianomeyer48@gmail.com
