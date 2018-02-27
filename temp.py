@@ -1,13 +1,5 @@
-M = [[0 for x in range(2)] for y in range(2)]
-
-for x in range(2):
-    for y in range(2):
-        y.append(int(input()))
-        y += 1
-    x += 1
-
-for x in range(2):
-    for y in range(2):
-        print('M[{}][{}]'.format(x, y))
-        y += 1
-    x += 1
+import fractions as F
+x = repr(F.Fraction(723520/51680)).split(', ')
+z = ', '.join(x).split(', ')
+print(z[0].strip('Fraction('))
+print(z[1].strip(')'))
