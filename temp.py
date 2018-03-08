@@ -1,13 +1,23 @@
-M = [[0 for x in range(2)] for y in range(2)]
+def procura(dados,N, p):
+    for i in range(N):
+        if dados[i] == p :
+            return i+1
 
-for x in range(2):
-    for y in range(2):
-        y.append(int(input()))
-        y += 1
-    x += 1
+N, Q = input().split(' ')
+N, Q = int(N), int(Q)
 
-for x in range(2):
-    for y in range(2):
-        print('M[{}][{}]'.format(x, y))
-        y += 1
-    x += 1
+while N!=0 and Q !=0:
+    dados = []*N
+    for i in range(N) :
+        dados.append(int(input()))
+    dados.sort()
+    for i in range(Q):
+        p =  int(input())
+        if (p in dados) :
+            print (p,'found at',procura(dados,N,p))
+        else :
+            print (p,'not found')
+
+    N = int(input())
+    Q = int(input())
+    dados[:]=[]
