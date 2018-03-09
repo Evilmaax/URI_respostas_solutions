@@ -1,23 +1,29 @@
-def procura(dados,N, p):
-    for i in range(N):
-        if dados[i] == p :
-            return i+1
+import sys
 
-N, Q = input().split(' ')
-N, Q = int(N), int(Q)
+for line in sys.stdin:
 
-while N!=0 and Q !=0:
-    dados = []*N
-    for i in range(N) :
-        dados.append(int(input()))
-    dados.sort()
-    for i in range(Q):
-        p =  int(input())
-        if (p in dados) :
-            print (p,'found at',procura(dados,N,p))
-        else :
-            print (p,'not found')
+    X, Z = [int(i) for i in line.split()]
+    X, Z, resultado, cont, t = str(int(bin(int(X))[2:])), str(int(bin(int(Z))[2:])), [], 0, 1
 
-    N = int(input())
-    Q = int(input())
-    dados[:]=[]
+    while X.__len__() != Z.__len__():
+        if X.__len__() < Z.__len__():
+            X = [cont] + list(X)
+        else:
+            Z = [cont] + list(Z)
+
+    for x in range(X.__len__()):
+        if int(X[x]) == 0 and int(Z[x]) == 0:
+            resultado.append('0')
+        if int(X[x]) == 1 and int(Z[x]) == 0:
+            resultado.append('1')
+        if int(X[x]) == 0 and int(Z[x]) == 1:
+            resultado.append('1')
+        if int(X[x]) == 1 and int(Z[x]) == 1:
+            resultado.append('0')
+
+    for x in reversed(resultado):
+        if x == '1':
+            cont += t
+        t *= 2
+
+    print(cont)
