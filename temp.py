@@ -1,1 +1,1 @@
-print(3%2)C = int(input())
+print(3%2)
