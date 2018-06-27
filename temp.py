@@ -1,16 +1,20 @@
-a = 8
-b = a
-a = 6
+valores = []
 
-print(b)
+for i in range(5):
+    valores.append(input('Informe um valor: '))
 
-a = 8
-b = 6
+print('Você digitou os valores [', end='')
+sep = ''
+for i in range(0, len(valores)):
+    print(sep, end='')
+    print(f'{valores[i]}', end='')
+    sep = ', '
+print(']')
+print('')
+print('Você digitou os valores [', end='')
+for i in range(len(valores)):
+    if i < len(valores)-1:
+        print(f'{valores[i]}', end=', ')
+    else:
+        print(f'{valores[i]}]')
 
-a = b
-b = a
-
-print(b)
-
-a, b = 1, 2
-a, b = b, a
