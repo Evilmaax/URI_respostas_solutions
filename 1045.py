@@ -1,4 +1,4 @@
-# Yes, I coulb use a built in sort method, but to push my limits I made a manually and complicated sort method with
+# Yes, I could use a built in sort method, but to push my limits I made a manually and complicated sort method with
 # flags to handle equal numbers
 
 # Sim, eu podia ter feito de uma maneira bem mais simples caso usasse um método de ordenamento nativo, mas resolvi
