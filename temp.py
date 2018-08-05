@@ -1,20 +1,24 @@
-valores = []
+import math
 
-for i in range(5):
-    valores.append(input('Informe um valor: '))
+N = int(input())
 
-print('Você digitou os valores [', end='')
-sep = ''
-for i in range(0, len(valores)):
-    print(sep, end='')
-    print(f'{valores[i]}', end='')
-    sep = ', '
-print(']')
-print('')
-print('Você digitou os valores [', end='')
-for i in range(len(valores)):
-    if i < len(valores)-1:
-        print(f'{valores[i]}', end=', ')
-    else:
-        print(f'{valores[i]}]')
+for x in range(N):
+    A, B = input().split(' ')
+    A, B = int(A), int(B)
+    print(math.gcd(A, B))
 
+
+N = int(input())
+monte, maior = [], 0
+
+for x in range(N):
+    A, B = input().split(' ')
+    A, B = int(A), int(B)
+    for x in range(A, 1, -1):
+        if A % x == 0:
+            monte.append(x)
+    for x in range(len(monte)):
+        if B % monte[x] == 0:
+            maior = monte[x]
+            break
+    print(maior)
