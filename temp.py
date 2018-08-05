@@ -1,24 +1,18 @@
-import math
+from functools import lru_cache
+import time
 
-N = int(input())
+@lru_cache(maxsize=39)
+def fib_com_cache(n):
+    if n < 2:
+        return n
+    return fib_com_cache(n-1) + fib_com_cache(n-2)
 
-for x in range(N):
-    A, B = input().split(' ')
-    A, B = int(A), int(B)
-    print(math.gcd(A, B))
+def fib_ate_40(funcao):
 
+    t1 = time.perf_counter()
+    for j in range(100):
+        funcao(j)
+    return time.perf_counter() - t1
 
-N = int(input())
-monte, maior = [], 0
-
-for x in range(N):
-    A, B = input().split(' ')
-    A, B = int(A), int(B)
-    for x in range(A, 1, -1):
-        if A % x == 0:
-            monte.append(x)
-    for x in range(len(monte)):
-        if B % monte[x] == 0:
-            maior = monte[x]
-            break
-    print(maior)
+# Em seguida, fazemos com cache
+print('Tempo de execução com cache: {:.6f} segundos'.format(fib_ate_40(fib_com_cache)))
