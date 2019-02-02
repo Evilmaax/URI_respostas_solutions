@@ -1,9 +1,25 @@
-name=str(input('Write your name: ')) #Recebe o nome
+while True:
+    vl = input().split(" ")
+    x1, y1, x2, y2 = vl
 
-def check(name): #Função para checar se o nome é elvis
-    while(name!='elvis'): #Loop que fica pedindo o nome até ser digitado o correto
-        print('You are not allowed!') #Mensagem avisando que não tem permissão
-        name=str(input('Write your name: ')) #Recebe o nome novamente
-    print('Welcome {}!'.format(name)) #Mensagem de boas vindas
+    x1 = int(x1)
+    y1 = int(y1)
+    x2 = int(x2)
+    y2 = int(y2)
 
-check(name) #Função acima
+    if (x1 + y1 + x2 + y2) == 0:
+        break
+
+    if (x1 == x2) and (y1 == y2):
+        print("%d" % 0)
+        continue
+
+    if (x1 == x2) or (y1 == y2):
+        print("%d" % 1)
+        continue
+
+    if abs(x1 - x2) == abs(y1 - y2):
+        print("%d" % 1)
+        continue
+
+    print("%d" % 2)
