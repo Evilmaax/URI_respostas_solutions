@@ -1,3 +1,3 @@
 # Problema de consulta SQL
 
-# SELECT DISTINCT city from customers;
+SELECT DISTINCT city from customers;
